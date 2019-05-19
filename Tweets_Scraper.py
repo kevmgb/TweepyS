@@ -22,8 +22,7 @@ hashtag_phrase = input('What hashtag are you interested in ?')
 
 
 # tweet_amount = input ('How many tweets would you like ?')
-# if __name__ == '__main__':
-#     search_for_hashtags(user_key, user_secret, access_token, access_token_secret, hashtag_phrase)
+
 
 
 # function that takes our access codes
@@ -60,3 +59,7 @@ def search_for_hashtags(user_key, user_secret,access_token, access_token_secret,
             write.writerow([tweet.created_at, tweet.full_text.replace('\n', ' '),
                         tweet.user.screen_name.encode('utf-8'),
                        tweet.user.followers_count])
+
+
+if __name__ == '__main__':
+     search_for_hashtags(user_key, user_secret, access_token, access_token_secret, hashtag_phrase)
