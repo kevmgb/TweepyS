@@ -51,7 +51,7 @@ def search_for_hashtags(user_key, user_secret,access_token, access_token_secret,
         # write tweets related to #IkoKazi (or any provided hashtag) to spreadsheet
         # i have filtered retweets, also used extended to make sure all text is present
         for tweet in tweepy.Cursor(api.search, q =hashtag_phrase + ' -filter:retweets', \
-                                   tweet_mode='extended').items(200): # Lets get 200 tweets for now, we could alternatively pass (tweet_amount) in .items()
+                                   tweet_mode='extended').items(1000): # Lets get 200 tweets for now, we could alternatively pass (tweet_amount) in .items()
 
             # Write to spreadsheet the timestamp(tweet.created_at), the tweet itself(tweet.full_text.replace)
             # The username (tweet.user.screen_name.encode('utf-8'), and followers of who tweeted.
